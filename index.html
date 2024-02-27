@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <main id="main">
+    </main>
+</body>
+<script>
+    let categories = {
+        bath: [
+            "papel higienico",
+            "desodorante",
+            "dentrifico",
+            "toallitas",
+            "shampoo",
+            "acondicionador",
+            "jabon corporal",
+            "hisopos",
+            "algodon",
+        ],
+        kitchen:[
+            "servilletas",
+            "detergente",
+            "esponja",
+            "virulana",
+        ],
+        food:[
+            "galletitas",
+            "mayonesa",
+            "ketchup",
+            "mostaza",
+            "leche",
+            "manteca",
+            "jugo",
+        ],
+    }
+    const main = document.getElementById('main')
+        for (const [name, items] of Object.entries(categories)) {
+            items.forEach(item => {
+                $('main').append(`<div class="${name} item">${item}</div>`);
+            });
+        }
+</script>
+<style>
+    body {
+        background-color: #888;
+        font-family: 'Courier New', monospace;
+    }
+
+    main {
+        margin: 50px auto;
+        width: 210mm;
+        height: 297mm;
+        background-color: #FFF;
+        box-shadow: 0 0 20px #000;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .item {
+        padding: 10px 20px;
+        margin: 5px;
+        color: white;
+    }
+    .bath {
+        background-color: dodgerblue;
+    }
+    .kitchen {
+        background-color: cadetblue;
+    }
+    .food {
+        background-color: lightsalmon;
+    }
+</style>
+
+</html>
